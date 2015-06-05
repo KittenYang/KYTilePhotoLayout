@@ -14,6 +14,9 @@
 		5FEFA7211B217C9400DC3DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FEFA7201B217C9400DC3DA0 /* Images.xcassets */; };
 		5FEFA7241B217C9400DC3DA0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FEFA7221B217C9400DC3DA0 /* LaunchScreen.xib */; };
 		5FEFA7301B217C9400DC3DA0 /* KYTilePhotoLayout_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFA72F1B217C9400DC3DA0 /* KYTilePhotoLayout_DemoTests.m */; };
+		5FEFA7471B21FB1100DC3DA0 /* KYTilePhotoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFA7461B21FB1100DC3DA0 /* KYTilePhotoLayout.m */; };
+		5FEFA74B1B220E8400DC3DA0 /* KYTilePhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFA74A1B220E8400DC3DA0 /* KYTilePhotoCell.m */; };
+		5FEFA74E1B2227AD00DC3DA0 /* UIColor+RandomFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFA74D1B2227AD00DC3DA0 /* UIColor+RandomFlatColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		5FEFA7291B217C9400DC3DA0 /* KYTilePhotoLayout-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KYTilePhotoLayout-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FEFA72E1B217C9400DC3DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FEFA72F1B217C9400DC3DA0 /* KYTilePhotoLayout_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYTilePhotoLayout_DemoTests.m; sourceTree = "<group>"; };
+		5FEFA7451B21FB1100DC3DA0 /* KYTilePhotoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYTilePhotoLayout.h; path = Classes/KYTilePhotoLayout.h; sourceTree = SOURCE_ROOT; };
+		5FEFA7461B21FB1100DC3DA0 /* KYTilePhotoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYTilePhotoLayout.m; path = Classes/KYTilePhotoLayout.m; sourceTree = SOURCE_ROOT; };
+		5FEFA7491B220E8400DC3DA0 /* KYTilePhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYTilePhotoCell.h; sourceTree = "<group>"; };
+		5FEFA74A1B220E8400DC3DA0 /* KYTilePhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYTilePhotoCell.m; sourceTree = "<group>"; };
+		5FEFA74C1B2227AD00DC3DA0 /* UIColor+RandomFlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomFlatColors.h"; sourceTree = "<group>"; };
+		5FEFA74D1B2227AD00DC3DA0 /* UIColor+RandomFlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomFlatColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +92,12 @@
 			children = (
 				5FEFA7171B217C9400DC3DA0 /* AppDelegate.h */,
 				5FEFA7181B217C9400DC3DA0 /* AppDelegate.m */,
+				5FEFA7481B21FB1D00DC3DA0 /* Classes */,
+				5FEFA74F1B22280600DC3DA0 /* UIColor+RandomFlatColors */,
 				5FEFA71A1B217C9400DC3DA0 /* ViewController.h */,
 				5FEFA71B1B217C9400DC3DA0 /* ViewController.m */,
+				5FEFA7491B220E8400DC3DA0 /* KYTilePhotoCell.h */,
+				5FEFA74A1B220E8400DC3DA0 /* KYTilePhotoCell.m */,
 				5FEFA71D1B217C9400DC3DA0 /* Main.storyboard */,
 				5FEFA7201B217C9400DC3DA0 /* Images.xcassets */,
 				5FEFA7221B217C9400DC3DA0 /* LaunchScreen.xib */,
@@ -117,6 +130,24 @@
 				5FEFA72E1B217C9400DC3DA0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FEFA7481B21FB1D00DC3DA0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5FEFA7451B21FB1100DC3DA0 /* KYTilePhotoLayout.h */,
+				5FEFA7461B21FB1100DC3DA0 /* KYTilePhotoLayout.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		5FEFA74F1B22280600DC3DA0 /* UIColor+RandomFlatColors */ = {
+			isa = PBXGroup;
+			children = (
+				5FEFA74C1B2227AD00DC3DA0 /* UIColor+RandomFlatColors.h */,
+				5FEFA74D1B2227AD00DC3DA0 /* UIColor+RandomFlatColors.m */,
+			);
+			name = "UIColor+RandomFlatColors";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +250,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FEFA7471B21FB1100DC3DA0 /* KYTilePhotoLayout.m in Sources */,
 				5FEFA71C1B217C9400DC3DA0 /* ViewController.m in Sources */,
 				5FEFA7191B217C9400DC3DA0 /* AppDelegate.m in Sources */,
+				5FEFA74E1B2227AD00DC3DA0 /* UIColor+RandomFlatColors.m in Sources */,
 				5FEFA7161B217C9400DC3DA0 /* main.m in Sources */,
+				5FEFA74B1B220E8400DC3DA0 /* KYTilePhotoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "KYTilePhotoLayout-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -360,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "KYTilePhotoLayout-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +454,7 @@
 				5FEFA7351B217C9400DC3DA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FEFA7361B217C9400DC3DA0 /* Build configuration list for PBXNativeTarget "KYTilePhotoLayout-DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +463,7 @@
 				5FEFA7381B217C9400DC3DA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
