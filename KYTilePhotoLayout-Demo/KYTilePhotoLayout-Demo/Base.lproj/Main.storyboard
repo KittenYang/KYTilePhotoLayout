@@ -26,7 +26,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="ColOfPortrait">
-                                            <integer key="value" value="2"/>
+                                            <integer key="value" value="3"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="ColOfLandscape">
                                             <integer key="value" value="3"/>
@@ -35,7 +35,7 @@
                                             <integer key="value" value="40"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="LayoutDirection">
-                                            <integer key="value" value="1"/>
+                                            <integer key="value" value="0"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewFlowLayout>
