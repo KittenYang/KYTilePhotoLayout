@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
 
-                   一个图片布局算法，实现图片的不规则紧凑排列。
+                   一个图片布局算法，实现图片的不规则紧凑排列，A UICollectionViewLayout with a really interesting image layout algorithm.
                    
                    DESC
 
