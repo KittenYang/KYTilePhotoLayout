@@ -2,6 +2,7 @@
   <img src="logo.png" alt="KYTilePhotoLayout" title="KYTilePhotoLayout">
 </p>
 
+
 ![CocoaPods Version](https://img.shields.io/badge/pod-v1.0.0-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-red.svg)
@@ -14,12 +15,15 @@ A UICollectionViewLayout with a really interesting image layout algorithm.
 
 ##垂直滚动：Vertical Scroll
 
-<img src="demo.png" width = "300">
+<img src="layout_l_v.gif" width = "300">
 
+<img src="layout_p_v.gif" width = "300">
 
 ##水平滚动：Horizontal Scroll
 
-<img src="demo2.png" width = "500">
+<img src="layout_l_h.gif" width = "500">
+
+<img src="layout_p_h.gif" width = "500">
 
 
 ##Installation
