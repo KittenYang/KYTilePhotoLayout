@@ -33,7 +33,6 @@
     
     //根据屏幕方向确定总共需要的列数
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-
     if (orientation == UIDeviceOrientationLandscapeLeft | orientation ==  UIDeviceOrientationLandscapeRight){
         self.columnsCount = self.ColOfLandscape;
     }else{
@@ -96,12 +95,10 @@
 
         }
         
-        NSLog(@"random:%f",retVal);
-
         
+        //如果是Horizontal,宽高互换。最后别忘了刷新高度栈
         if (LayoutHorizontal) {
             
-            //如果是Horizontal,宽高互换
             NSUInteger temp = size_width;
             size_width = size_height;
             size_height = temp;
