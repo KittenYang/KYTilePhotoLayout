@@ -36,8 +36,15 @@ static NSString *ReuseIdentifier = @"KYTilePhotoCell";
     
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
-    KYTilePhotoLayout *layout = (KYTilePhotoLayout *)self.collectionView.collectionViewLayout;
-    [layout invalidateLayout];
+//    KYTilePhotoLayout *layout = (KYTilePhotoLayout *)self.collectionView.collectionViewLayout;
+//    [layout invalidateLayout];
+    
+
+    KYTilePhotoLayout *tileLayout = [[KYTilePhotoLayout alloc]init];
+    tileLayout.ColOfPortrait  = 2;
+    tileLayout.ColOfLandscape = 3;
+    tileLayout.LayoutDirection =  Vertical;
+    self.collectionView.collectionViewLayout = tileLayout;
 }
 
 
