@@ -1,4 +1,12 @@
-# KYTilePhotoLayout
+<p align="left" >
+  <img src="logo.png" alt="KYTilePhotoLayout" title="KYTilePhotoLayout">
+</p>
+
+![CocoaPods Version](https://img.shields.io/badge/pod-v1.0.0-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/platform-iOS-red.svg)
+
+
 A UICollectionViewLayout with a really interesting image layout algorithm.
 
 一个图片布局算法，实现图片的不规则排列，并且大小不一。具体效果如图:
@@ -12,6 +20,12 @@ A UICollectionViewLayout with a really interesting image layout algorithm.
 ##水平滚动：Horizontal Scroll
 
 <img src="demo2.png" width = "500">
+
+
+##Installation
+
+`pod 'KYTilePhotoLayout', '~> 1.0.0'`
+
 
 ##How to use
 
