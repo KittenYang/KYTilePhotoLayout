@@ -34,6 +34,9 @@
                                         <userDefinedRuntimeAttribute type="number" keyPath="DoubleColumnThreshold">
                                             <integer key="value" value="40"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="LayoutDirection">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewFlowLayout>
                                 <cells>

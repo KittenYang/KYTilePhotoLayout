@@ -8,6 +8,13 @@
 
 #import "KYTilePhotoLayout.h"
 
+
+
+
+#define LayoutHorizontal self.LayoutDirection == Horizontal
+#define LayoutVertical   self.LayoutDirection == Vertical
+
+
 @interface KYTilePhotoLayout()
 
 @property (nonatomic,assign)NSUInteger columnsCount;
@@ -25,7 +32,13 @@
     
     
     //根据屏幕方向确定总共需要的列数
-    self.columnsCount = self.ColOfPortrait;
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+
+    if (orientation == UIDeviceOrientationLandscapeLeft | orientation ==  UIDeviceOrientationLandscapeRight){
+        self.columnsCount = self.ColOfLandscape;
+    }else{
+        self.columnsCount = self.ColOfPortrait;
+    }
     
     //确定所有item的个数
     NSUInteger itemCounts = [[self collectionView]numberOfItemsInSection:0];
@@ -44,23 +57,23 @@
         NSUInteger shtIndex = [self findShortestColumn];
         
         //x -- 尽可能用整数
-        NSUInteger origin_x = shtIndex * [self columnWidth];
+        NSUInteger origin_x = LayoutVertical ? shtIndex * [self columnWidth] : [self.COLUMNSHEIGHTS[shtIndex] integerValue];
         //y
-        NSUInteger origin_y = [self.COLUMNSHEIGHTS[shtIndex] integerValue];
+        NSUInteger origin_y = LayoutVertical ? [self.COLUMNSHEIGHTS[shtIndex] integerValue] : shtIndex * [self columnWidth];
         
         //width
         NSUInteger size_width = 0.0;
         NSUInteger randomOfWhetherDouble = arc4random() % 100;//随机数标记是否要双行
-
+        
+        //如果当前列不是最后一列 && 当前列高度和后一列高度相等 && 达到跨行阈值
         if (shtIndex < self.columnsCount - 1 && [self.COLUMNSHEIGHTS[shtIndex] floatValue] == [self.COLUMNSHEIGHTS[shtIndex+1] floatValue] && randomOfWhetherDouble < self.DoubleColumnThreshold) {
             
             size_width = 2*[self columnWidth];
-
+            
         }else{
             
             size_width = [self columnWidth];
         }
-
         
         //height
         NSUInteger size_height = 0.0;
@@ -69,25 +82,59 @@
             
             float extraRandomHeight = arc4random() % 25;
             retVal = 0.75 + (extraRandomHeight / 100);
-
+            
             size_height = size_width * retVal; // 高度为宽度的0.75~1.0倍
             size_height = size_height - (size_height % 40);
-            
-            self.COLUMNSHEIGHTS[shtIndex] = @(origin_y + size_height);
-            self.COLUMNSHEIGHTS[shtIndex+1] = @(origin_y + size_height);
-            
+                        
         }else{
+            
             
             float extraRandomHeight = arc4random() % 50;
             retVal = 0.75 + (extraRandomHeight / 100);
             size_height = size_width * retVal; // 高度为宽度的0.75~1.25倍
             size_height = size_height - (size_height % 40);
-            self.COLUMNSHEIGHTS[shtIndex] = @(origin_y + size_height);
+
         }
         
         NSLog(@"random:%f",retVal);
+
+        
+        if (LayoutHorizontal) {
+            
+            //如果是Horizontal,宽高互换
+            NSUInteger temp = size_width;
+            size_width = size_height;
+            size_height = temp;
+            
+            if (size_height == 2*[self columnWidth]) {
+                
+                self.COLUMNSHEIGHTS[shtIndex] = @(origin_x + size_width);
+                self.COLUMNSHEIGHTS[shtIndex+1] = @(origin_x + size_width);
+                
+            }else{
+                
+                self.COLUMNSHEIGHTS[shtIndex] = @(origin_x + size_width);
+                
+            }
+            
+        }else{
+            
+            if (size_width == 2*[self columnWidth]) {
+                
+                self.COLUMNSHEIGHTS[shtIndex] = @(origin_y + size_height);
+                self.COLUMNSHEIGHTS[shtIndex+1] = @(origin_y + size_height);
+                
+            }else{
+                
+                self.COLUMNSHEIGHTS[shtIndex] = @(origin_y + size_height);
+                
+            }
+            
+        }
         
         
+
+        //给attributes.frame 赋值，并存入 self.itemsAttributes
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
         attributes.frame = CGRectMake(origin_x, origin_y, size_width, size_height);
@@ -112,8 +159,12 @@
 
     CGSize size = self.collectionView.bounds.size;
     NSUInteger longstIndex = [self findLongestColumn];
-    float columnHeight = [self.COLUMNSHEIGHTS[longstIndex] floatValue];
-    size.height = columnHeight;
+    float columnMax = [self.COLUMNSHEIGHTS[longstIndex] floatValue];
+    if (LayoutVertical) {
+        size.height = columnMax;
+    }else{
+        size.width  = columnMax;
+    }
     
     return size;
 }
@@ -125,7 +176,7 @@
 //均分的宽度,注意：四舍五入成整数
 - (float)columnWidth{
     
-    return roundf(self.collectionView.bounds.size.width / self.columnsCount);
+    return LayoutVertical ? roundf(self.collectionView.bounds.size.width / self.columnsCount) : roundf(self.collectionView.bounds.size.height / self.columnsCount);
     
 }
 
@@ -135,8 +186,8 @@
     NSUInteger shortestIndex = 0;
     CGFloat shortestValue = MAXFLOAT;
     
-    //游标
-    NSUInteger index=0;
+
+    NSUInteger index=0;//游标
     for (NSNumber *columnHeight in self.COLUMNSHEIGHTS) {
         if ([columnHeight floatValue] < shortestValue) {
             shortestValue = [columnHeight floatValue];
@@ -155,8 +206,8 @@
     NSUInteger longestIndex = 0;
     CGFloat longestValue = 0;
     
-    //游标
-    NSUInteger index=0;
+    
+    NSUInteger index=0;//游标
     for (NSNumber *columnHeight in self.COLUMNSHEIGHTS) {
         if ([columnHeight floatValue] > longestValue) {
             longestValue = [columnHeight floatValue];

@@ -6,7 +6,13 @@
 //  Copyright (c) 2015 Kitten Yang. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
+
+typedef enum : NSUInteger {
+    Vertical, // 0
+    Horizontal, // 1
+} KYTilePhotoLayoutDirection;
 
 IB_DESIGNABLE
 @interface KYTilePhotoLayout : UICollectionViewLayout
@@ -19,5 +25,7 @@ IB_DESIGNABLE
 //0~100
 @property(nonatomic,assign)IBInspectable NSUInteger DoubleColumnThreshold;
 
+
+@property(nonatomic,assign)IBInspectable KYTilePhotoLayoutDirection LayoutDirection;
 
 @end
