@@ -33,8 +33,8 @@ It's just two files: `KYTilePhotoLayout.h` && `KYTilePhotoLayout.m`. And it's th
 
 Set the layout's class to **KYTilePhotoLayout** .Then you can set the value visibly:
 
-<img src="ScreenShot_1.png" width = "300">
+<img src="ScreenShot_1.png" width = "500">
 
-<img src="ScreenShot_2.png" width = "300">
+<img src="ScreenShot_2.png" width = "500">
 
 
