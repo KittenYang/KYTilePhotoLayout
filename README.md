@@ -56,7 +56,7 @@ Set the layout's class to **KYTilePhotoLayout** .Then you can set the value visi
 <img src="ScreenShot_2.png" width = "500">
 
 
-##How to invoke transition betweet Portrait and Landscape:
+##How to invoke transition between Portrait and Landscape:
 
 ```objc
 #pragma mark -- RotateToReLayout
