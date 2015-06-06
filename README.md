@@ -15,7 +15,7 @@ A UICollectionViewLayout with a really interesting image layout algorithm.
 
 ##垂直滚动：Vertical Scroll
 
-<img src="layout_l_v.gif" width = "300">
+<img src="layout_l_v.gif" width = "500">
 
 <img src="layout_p_v.gif" width = "300">
 
@@ -23,7 +23,7 @@ A UICollectionViewLayout with a really interesting image layout algorithm.
 
 <img src="layout_l_h.gif" width = "500">
 
-<img src="layout_p_h.gif" width = "500">
+<img src="layout_p_h.gif" width = "300">
 
 
 ##Installation
