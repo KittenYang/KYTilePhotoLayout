@@ -52,3 +52,18 @@ Set the layout's class to **KYTilePhotoLayout** .Then you can set the value visi
 <img src="ScreenShot_2.png" width = "500">
 
 
+##How to invoke transition betweet Portrait and Landscape:
+
+```objc
+#pragma mark -- RotateToReLayout
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+    KYTilePhotoLayout *layout = (KYTilePhotoLayout *)self.collectionView.collectionViewLayout;
+    [layout invalidateLayout];
+}
+
+```
+
+
