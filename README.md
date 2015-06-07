@@ -75,4 +75,5 @@ Set the layout's class to **KYTilePhotoLayout** .Then you can set the value visi
 
 ```
 
-
+##License
+This project is under MIT License. See LICENSE file for more information.
