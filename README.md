@@ -40,7 +40,7 @@ Algorithm introduce article:
 
 It's just two files: `KYTilePhotoLayout.h` && `KYTilePhotoLayout.m`. And it's the subclass of `UICollectionViewLayout`.So you can easily use like a normal `UICollectionViewLayout`. eg:
 
-###Use code:
+###＊Use code:
 
 ```objc
 
@@ -52,7 +52,7 @@ It's just two files: `KYTilePhotoLayout.h` && `KYTilePhotoLayout.m`. And it's th
 
 ```
 
-###Use Interface Builder:
+###＊Use Interface Builder:
 
 Set the layout's class to **KYTilePhotoLayout** .Then you can set the value visibly:
 
