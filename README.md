@@ -64,6 +64,8 @@ Set the layout's class to **KYTilePhotoLayout** .Then you can set the value visi
 ##How to invoke transition between Portrait and Landscape:
 
 ```objc
+In you ViewController:
+
 #pragma mark -- RotateToReLayout
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     
